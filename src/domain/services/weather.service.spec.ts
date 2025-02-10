@@ -17,7 +17,7 @@ describe('WeatherService', () => {
         WeatherService,
         ErrorService,
         {
-          provide: OpenWeatherMapAdapter, // Mock del adapter
+          provide: OpenWeatherMapAdapter,
           useValue: {
             getWeatherByCity: jest.fn(),
           },
@@ -38,9 +38,9 @@ describe('WeatherService', () => {
     const mockWeather = new Weather(29.81, 38, 'clear sky');
     (adapter.getWeatherByCity as jest.Mock).mockReturnValue(of(mockWeather));
 
-    const result = await service.getWeatherByCity(city).toPromise(); // Llamar al servicio
+    const result = await service.getWeatherByCity(city).toPromise();
 
-    expect(result).toEqual(mockWeather); // Verificar el resultado del servicio
+    expect(result).toEqual(mockWeather);
   });
 
   it('should handle city not found', async () => {
@@ -49,9 +49,9 @@ describe('WeatherService', () => {
     (adapter.getWeatherByCity as jest.Mock).mockReturnValue(throwError(() => new Error(errorMessage)));
 
     try {
-      await service.getWeatherByCity(city).toPromise(); // Llamar al servicio
+      await service.getWeatherByCity(city).toPromise(); 
     } catch (error) {
-      expect(error.message).toEqual(errorMessage); // Verificar el error lanzado por el servicio
+      expect(error.message).toEqual(errorMessage);
     }
   });
 
@@ -61,9 +61,9 @@ describe('WeatherService', () => {
     (adapter.getWeatherByCity as jest.Mock).mockReturnValue(throwError(() => new Error(errorMessage)));
 
     try {
-      await service.getWeatherByCity(city).toPromise(); // Llamar al servicio
+      await service.getWeatherByCity(city).toPromise(); 
     } catch (error) {
-      expect(error.message).toEqual(errorMessage); // Verificar el error lanzado por el servicio
+      expect(error.message).toEqual(errorMessage); 
     }
   });
 
@@ -73,9 +73,9 @@ describe('WeatherService', () => {
     (adapter.getWeatherByCity as jest.Mock).mockReturnValue(throwError(() => new Error(errorMessage)));
 
     try {
-      await service.getWeatherByCity(city).toPromise(); // Llamar al servicio
+      await service.getWeatherByCity(city).toPromise(); 
     } catch (error) {
-      expect(error.message).toEqual(errorMessage); // Verificar el error lanzado por el servicio
+      expect(error.message).toEqual(errorMessage); 
     }
   });
 
@@ -85,9 +85,9 @@ describe('WeatherService', () => {
     (adapter.getWeatherByCity as jest.Mock).mockReturnValue(throwError(() => new Error(errorMessage)));
 
     try {
-      await service.getWeatherByCity(city).toPromise(); // Llamar al servicio
+      await service.getWeatherByCity(city).toPromise(); 
     } catch (error) {
-      expect(error.message).toEqual(errorMessage); // Verificar el error lanzado por el servicio
+      expect(error.message).toEqual(errorMessage); 
     }
   });
 

@@ -33,7 +33,7 @@ describe('InfrastructureModule', () => {
   });
 
   it('should export OpenWeatherMapAdapter', () => {
-    const adapter = module.get<OpenWeatherMapAdapter>(OpenWeatherMapAdapter); // Obtiene el proveedor exportado
-    expect(adapter).toBeDefined(); // Verifica que el proveedor exportado esté definido
+    const adapter = module.get<OpenWeatherMapAdapter>(OpenWeatherMapAdapter); 
+    expect(adapter).toBeDefined(); 
   });
 });

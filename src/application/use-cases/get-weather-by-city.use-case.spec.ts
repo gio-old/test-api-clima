@@ -65,7 +65,7 @@ describe('GetWeatherByCity', () => {
 
   it('should throw error if service fails', async () => {
     const city = 'London';
-    const errorMessage = 'Service unavailable'; // Mensaje de error esperado
+    const errorMessage = 'Service unavailable';
 
     jest
       .spyOn(weatherRepository, 'getWeatherByCity')

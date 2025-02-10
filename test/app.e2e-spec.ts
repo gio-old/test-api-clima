@@ -56,8 +56,8 @@ describe('OpenWeatherMapAdapter', () => {
 
     expect(result).toEqual(mockResponse);
     expect(httpService.get).toHaveBeenCalledWith(
-      expect.stringContaining('London'), // Verifica que la URL contenga 'London'
-      expect.objectContaining({ params: { units: 'metric' } }), // Verifica que los parámetros incluyan 'units: metric'
+      expect.stringContaining('London'), 
+      expect.objectContaining({ params: { units: 'metric' } }), 
     );
   });
 
@@ -88,8 +88,8 @@ describe('OpenWeatherMapAdapter', () => {
       expect(error).toBeInstanceOf(HttpException);
       expect(error.message).toEqual(
         'Error al comunicarse con la API de OpenWeatherMap.',
-      ); // Mensaje de error esperado
-      expect(error.getStatus()).toEqual(500); // Código de estado esperado
+      ); 
+      expect(error.getStatus()).toEqual(500);
     }
   });
 
@@ -102,8 +102,8 @@ describe('OpenWeatherMapAdapter', () => {
       await adapter.getWeatherByCity('NonExistentCity').toPromise();
     } catch (error) {
       expect(error).toBeInstanceOf(HttpException);
-      expect(error.message).toEqual('Empty response from OpenWeatherMap API'); // Mensaje de error esperado
-      expect(error.getStatus()).toEqual(500); // Código de estado esperado
+      expect(error.message).toEqual('Empty response from OpenWeatherMap API'); 
+      expect(error.getStatus()).toEqual(500); 
     }
   });
 
@@ -116,8 +116,8 @@ describe('OpenWeatherMapAdapter', () => {
       await adapter.getWeatherByCity('NonExistentCity').toPromise();
     } catch (error) {
       expect(error).toBeInstanceOf(HttpException);
-      expect(error.message).toEqual(mockResponse.message); // Mensaje de error esperado
-      expect(error.getStatus()).toEqual(404); // Código de estado esperado
+      expect(error.message).toEqual(mockResponse.message); 
+      expect(error.getStatus()).toEqual(404); 
     }
   });
 });
