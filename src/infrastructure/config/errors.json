@@ -1,0 +1,20 @@
+{
+  "OPENWEATHER_ERROR": {
+    "DEFAULT": {
+      "message": "An unexpected error occurred",
+      "status": 500
+    },
+    "NO_RESPONSE": {
+      "message": "No response received from OpenWeatherMap",
+      "status": 503
+    },
+    "CONFIG_ERROR": {
+      "message": "Error configuring the request to OpenWeatherMap",
+      "status": 500
+    },
+    "API_ERROR": {
+      "message": "Error from OpenWeatherMap: {error_message}",
+      "status": 400
+    }
+  }
+}
