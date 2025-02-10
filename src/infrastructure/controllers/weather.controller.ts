@@ -1,33 +1,21 @@
-import {
-  Controller,
-  Get,
-  Query,
-  HttpException,
-  HttpStatus,
-} from '@nestjs/common';
+import { Controller, Get, Query, BadRequestException, InternalServerErrorException } from '@nestjs/common';
 import { WeatherService } from '../../domain/services/weather.service';
-import { Observable, catchError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { Weather } from '../../domain/entities/weather.entity';
 
 @Controller('weather')
 export class WeatherController {
   constructor(private readonly weatherService: WeatherService) {}
 
   @Get()
-  getWeather(@Query('city') city: string): Observable<any> {
+  getWeather(@Query('city') city: string): Observable<Weather> {
     if (!city) {
-      throw new HttpException(
-        'City query parameter is required',
-        HttpStatus.BAD_REQUEST,
-      );
+      return throwError(() => new BadRequestException('City is required'));
     }
 
     return this.weatherService.getWeatherByCity(city).pipe(
-      catchError((error) => {
-        throw new HttpException(
-          error.message || 'An unexpected error occurred',
-          error.status || HttpStatus.INTERNAL_SERVER_ERROR,
-        );
-      }),
+      catchError(() => throwError(() => new InternalServerErrorException('Failed to fetch weather data')))
     );
   }
 }
