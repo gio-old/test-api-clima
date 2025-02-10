@@ -52,7 +52,6 @@ $ npm run test:cov
 ### 📄 Ejemplo de respuesta:
 ```json
 {
-  "city": "London",
   "temperature": 18.5,
   "humidity": 75,
   "description": "Parcialmente nublado"
