@@ -63,6 +63,7 @@ $ npm run test:cov
 Para visualizar la documentación de la API con Swagger, inicia el servidor y accede a la siguiente URL en tu navegador:
 http://localhost:3000/api
 Para más información, consulta la [documentación oficial de NestJS](https://docs.nestjs.com/) o revisa nuestra implementación en este repositorio.
+Solo en esta oportunidad a modo de prueba se compartira esta variable que debe ir en un archivo .env en la raiz del directorio: OPENWEATHER_API_KEY='2ce774404ae0a626982cb3fdabced3f3'
 
 ## 🤝 Contribuciones
 Las contribuciones son bienvenidas. Si deseas contribuir, abre un **issue** o un **pull request** con mejoras.
