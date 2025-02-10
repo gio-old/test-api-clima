@@ -2,7 +2,8 @@ import { Injectable, Inject, HttpException } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { Observable, catchError, map, throwError } from 'rxjs';
 import { AxiosError } from 'axios';
-import { WeatherRepository } from '../../domain/ports/weather.repository';
+import { WeatherRepository } from '../../domain/ports/weather.repository'; // Importa la interfaz
+
 import { Weather } from '../../domain/entities/weather.entity';
 import { ErrorService } from '../../domain/services/error.service';
 
@@ -11,9 +12,10 @@ export class OpenWeatherMapAdapter implements WeatherRepository {
   private readonly apiKey = process.env.OPENWEATHER_API_KEY || '';
   private readonly baseUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
-  constructor
+  constructor(
     private readonly httpService: HttpService,
     @Inject(ErrorService) private readonly errorService: ErrorService,
+
   ) {}
 
   getWeatherByCity(city: string): Observable<Weather> {
