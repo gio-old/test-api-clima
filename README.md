@@ -60,6 +60,8 @@ $ npm run test:cov
 ```
 
 ## 📖 Documentación
+Para visualizar la documentación de la API con Swagger, inicia el servidor y accede a la siguiente URL en tu navegador:
+http://localhost:3000/api
 Para más información, consulta la [documentación oficial de NestJS](https://docs.nestjs.com/) o revisa nuestra implementación en este repositorio.
 
 ## 🤝 Contribuciones

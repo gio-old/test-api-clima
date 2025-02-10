@@ -25,6 +25,7 @@
     "@nestjs/config": "^4.0.0",
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-express": "^11.0.1",
+    "@nestjs/swagger": "^11.0.3",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
   },
@@ -76,7 +77,13 @@
       "!**/main.ts"
     ],
     "coverageDirectory": "../coverage",
-    "coverageReporters": ["html", "text", "lcov", "clover", "json"],
+    "coverageReporters": [
+      "html",
+      "text",
+      "lcov",
+      "clover",
+      "json"
+    ],
     "coverageThreshold": {
       "global": {
         "statements": 80,
@@ -87,7 +94,7 @@
     },
     "testEnvironment": "node",
     "testPathIgnorePatterns": [
-      "<rootDir>/main.ts" 
+      "<rootDir>/main.ts"
     ]
   }
 }
